@@ -1,0 +1,6 @@
+[package]
+name = "CryptoTools"
+version = "0.1.0"
+authors = ["pamplemousse"]
+
+[dependencies]
