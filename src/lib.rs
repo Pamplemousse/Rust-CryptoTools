@@ -8,7 +8,7 @@ pub struct Mod {
 impl Mod {
     pub fn new(value: i32, modulus: i32) -> Mod {
         Mod {
-            value: value,
+            value: value % modulus,
             modulus: modulus,
         }
     }
