@@ -1,8 +1,9 @@
 use std::cmp::Eq;
+use std::ops::Add;
 
 pub struct Mod {
-    pub value: i32,
-    pub modulus: i32,
+    value: i32,
+    modulus: i32,
 }
 
 impl Mod {
@@ -21,3 +22,11 @@ impl PartialEq for Mod {
 }
 
 impl Eq for Mod {}
+
+impl Add for Mod {
+    type Output = Mod;
+
+    fn add(self, other: Mod) -> Mod {
+        Mod::new(self.value + other.value, self.modulus)
+    }
+}
