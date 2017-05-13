@@ -1,3 +1,3 @@
 pub fn dummy() -> bool {
-  return true;
+    return true;
 }

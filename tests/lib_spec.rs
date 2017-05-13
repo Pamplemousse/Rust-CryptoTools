@@ -1,6 +1,6 @@
-extern crate CryptoTools;
+extern crate crypto_tools;
 
 #[test]
 fn dummy_works() {
-  assert!(CryptoTools::dummy());
+    assert!(crypto_tools::dummy());
 }
