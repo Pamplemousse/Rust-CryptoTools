@@ -19,7 +19,7 @@ fn mod_numbers_with_different_modulus_fails() {
 }
 
 #[test]
-fn mod_numbers_with_different_values_fails() {
+fn mod_numbers_with_different_values_differs() {
     let mod_1: Mod = Mod::new(1, 5);
     let mod_2: Mod = Mod::new(3, 5);
 
@@ -44,10 +44,10 @@ fn add_numbers_with_same_modulus_succeeds() {
 }
 
 #[test]
-fn add_same_mod_numbers_are_equals() {
+fn add_mod_numbers_results_in_canonical_form() {
     let mod_1: Mod = Mod::new(1, 5);
-    let mod_2: Mod = Mod::new(6, 5);
-    let result: Mod = Mod::new(2, 5);
+    let mod_2: Mod = Mod::new(7, 5);
+    let result: Mod = Mod::new(3, 5);
 
     assert!(mod_1 + mod_2 == result);
 }
