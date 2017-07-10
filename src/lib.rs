@@ -30,3 +30,17 @@ impl Add for Mod {
         Mod::new(self.value + other.value, self.modulus)
     }
 }
+
+pub fn gcd(a: i32, b: i32) -> i32 {
+    let mut r1 = b;
+    let mut r2 = a;
+    let mut r = r2 % r1;
+
+    while r != 0 {
+        r2 = r1;
+        r1 = r;
+        r = r2 % r1;
+    }
+
+    r1
+}
