@@ -1,5 +1,6 @@
 use std::cmp::Eq;
 use std::ops::Add;
+use std::ops::Mul;
 
 pub struct Mod {
     value: i32,
@@ -26,8 +27,16 @@ impl Eq for Mod {}
 impl Add for Mod {
     type Output = Mod;
 
-    fn add(self, other: Mod) -> Mod {
+    fn add(self, other: Self) -> Self::Output {
         Mod::new(self.value + other.value, self.modulus)
+    }
+}
+
+impl Mul for Mod {
+    type Output = Mod;
+
+    fn mul(self, other: Self) -> Self::Output {
+        Mod::new(self.value * other.value, self.modulus)
     }
 }
 

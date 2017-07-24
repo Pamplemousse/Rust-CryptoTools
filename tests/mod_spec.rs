@@ -51,3 +51,21 @@ fn add_mod_numbers_results_in_canonical_form() {
 
     assert!(mod_1 + mod_2 == result);
 }
+
+#[test]
+fn multiply_numbers_with_same_modulus_succeeds() {
+    let mod_1: Mod = Mod::new(2, 7);
+    let mod_2: Mod = Mod::new(3, 7);
+    let result: Mod = Mod::new(6, 7);
+
+    assert!(mod_1 * mod_2 == result);
+}
+
+#[test]
+fn multiply_mod_numbers_results_in_canonical_form() {
+    let mod_1: Mod = Mod::new(3, 4);
+    let mod_2: Mod = Mod::new(2, 4);
+    let result: Mod = Mod::new(2, 4);
+
+    assert!(mod_1 * mod_2 == result);
+}
