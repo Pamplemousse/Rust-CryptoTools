@@ -1,5 +1,6 @@
 use std::cmp::Eq;
 use std::ops::Add;
+use std::ops::Sub;
 use std::ops::Mul;
 
 pub struct Mod {
@@ -9,8 +10,14 @@ pub struct Mod {
 
 impl Mod {
     pub fn new(value: i32, modulus: i32) -> Mod {
+        let remainder = value % modulus;
+        let value = match remainder > 0 {
+            true => remainder,
+            false => remainder + modulus
+        };
+
         Mod {
-            value: value % modulus,
+            value: value,
             modulus: modulus,
         }
     }
@@ -29,6 +36,14 @@ impl Add for Mod {
 
     fn add(self, other: Self) -> Self::Output {
         Mod::new(self.value + other.value, self.modulus)
+    }
+}
+
+impl Sub for Mod {
+    type Output = Mod;
+
+    fn sub(self, other: Self) -> Self::Output {
+        Mod::new(self.value - other.value, self.modulus)
     }
 }
 
