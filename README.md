@@ -8,6 +8,9 @@ Doing Maths in Rust for some Crypto related applications.
 # run the tests
 cargo test
 
+# do not hide stdout
+cargo test -- --nocapture
+
 # compile
 rustc src/lib.rs
 ```
