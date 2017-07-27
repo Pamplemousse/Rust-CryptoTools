@@ -2,6 +2,14 @@ use std::cmp::Eq;
 use std::ops::Add;
 use std::ops::Mul;
 
+use std::fmt;
+
+impl fmt::Display for Mod {
+  fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+    write!(f, "{} (mod {})", self.value, self.modulus)
+  }
+}
+
 pub struct Mod {
     value: i32,
     modulus: i32,
