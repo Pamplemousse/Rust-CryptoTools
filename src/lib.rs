@@ -11,7 +11,7 @@ pub struct Mod {
 impl Mod {
     pub fn new(value: i32, modulus: i32) -> Mod {
         let remainder = value % modulus;
-        let value = match remainder > 0 {
+        let value = match remainder >= 0 {
             true => remainder,
             false => remainder + modulus
         };
