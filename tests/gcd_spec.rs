@@ -17,3 +17,13 @@ fn with_a_number_dividing_another_returns_the_first() {
     assert!(gcd(12, 4) == 4);
     assert!(gcd(4, 12) == 4);
 }
+
+#[test]
+fn with_a_zero_and_a_number_returns_the_number() {
+    assert!(gcd(0, 12) == 12);
+}
+
+#[test]
+fn with_two_zeros_returns_zero() {
+    assert!(gcd(0, 0) == 0);
+}
